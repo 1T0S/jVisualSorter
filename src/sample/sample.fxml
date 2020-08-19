@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/1.8.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <right>
+      <VBox prefHeight="600.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+         <children>
+            <RadioButton fx:id="radioBubbleSort" mnemonicParsing="false" selected="true" text="Bubble">
+               <toggleGroup>
+                  <ToggleGroup fx:id="sortType" />
+               </toggleGroup>
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="35.0" top="10.0" />
+               </VBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="radioSelectionSort" mnemonicParsing="false" text="Selection" toggleGroup="$sortType">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="35.0" top="10.0" />
+               </VBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="radioInsertionSort" mnemonicParsing="false" styleClass="my-tet" text="Insertion" toggleGroup="$sortType">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="35.0" top="10.0" />
+               </VBox.margin>
+            </RadioButton>
+            <Slider fx:id="sliderGenerate" blockIncrement="2.0" min="10.0" minorTickCount="2" orientation="VERTICAL" prefHeight="110.0" prefWidth="14.0" snapToTicks="true" value="25.0">
+               <VBox.margin>
+                  <Insets left="72.0" top="50.0" />
+               </VBox.margin>
+            </Slider>
+            <Label fx:id="labelCols" prefHeight="17.0" prefWidth="115.0" styleClass="my-text" text="30 cols" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" top="50.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="buttonSort" mnemonicParsing="false" onAction="#sort" styleClass="my-button" text="SORT">
+               <VBox.margin>
+                  <Insets left="60.0" top="40.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="buttonFile" mnemonicParsing="false" onAction="#setOutput" prefHeight="25.0" prefWidth="48.0" styleClass="my-button" text="FILE">
+               <VBox.margin>
+                  <Insets left="60.0" top="40.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="buttonExit" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="48.0" styleClass="my-button" text="EXIT">
+               <VBox.margin>
+                  <Insets left="60.0" top="40.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <Canvas fx:id="myCanvas" accessibleRole="PARENT" height="600.0" width="750.0">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </Canvas>
+   </center>
+</BorderPane>
